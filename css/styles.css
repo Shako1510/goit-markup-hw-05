@@ -107,24 +107,25 @@ li {
     font-weight: 500;
     line-height:1.1;
     letter-spacing: 0.02em;
-    color: var(--primary-text-color);
     display: block;
-     padding-top: 32px;
-     padding-bottom: 32px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    position: relative;
+    color: var(--primary-text-color);
 
-     position: relative;
+     transition-duration: 250ms;
+     transition-property: color;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
  }
-
-
  .nav-link:hover, 
- .nav-link:focus  {
+ .nav-link:focus,
+ .nav-link:active
+   {
      color: var(--accent-text-color);
      cursor: pointer;
  }
 
- .nav-link:hover::after,
- .nav-link:focus::after,
- .nav-link:active::after
+ .nav-link::after
  {
      content: "";
      width: 100%;
@@ -135,9 +136,12 @@ li {
      left: 0;
      border-radius: 2px;
      background: var(--background-button-hover);
-
  }
 
+
+/*.nav-link:active::after{
+    opacity: 1;
+}*/
 
  .contakt {
     display: flex;
@@ -156,6 +160,10 @@ li {
      color:var(--page-text-color);
      display: inline-flex;
      padding: 32px 0;
+
+     transition-duration: 250ms;
+     transition-property: color;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
     
  
  }
@@ -234,6 +242,8 @@ li {
     border-radius: 4px;
     border: none;
     cursor: pointer;
+
+    
 }
 
 .backdrop{
@@ -243,9 +253,13 @@ li {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+
+    transition-duration: 1.5s;
+    transition-timing-function: linear;
+   
+    
 }
 .backdrop.is-hidden{
-    visibility: hidden;
     opacity: 0;
     pointer-events: none;
 }
@@ -261,6 +275,8 @@ li {
 
     background-color: var(--background-color);
     border-radius: 4px;
+
+
 }
 
 .model-button{
@@ -282,9 +298,6 @@ li {
     cursor: pointer;
     
 }
-
-
-
 
 
 /*Секкція Особливості Advantage*/
@@ -349,6 +362,7 @@ li {
     letter-spacing: 0.03em;
     color: var(--page-text-color);
 }
+/*Кінець секції Advantage*/
 
 /*Початок секії Чем мы занимаесмя*/
 
@@ -489,6 +503,10 @@ padding: 27px 82px;
     align-items: center;
     justify-content: center;
     background-color: var(--background-color);
+
+    transition-duration: 255ms;
+     transition-property: background-color, fill;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
 }
 .social-link:hover,
 .social-link:focus
@@ -542,6 +560,10 @@ padding: 27px 82px;
      border: 1px solid var(--primery-icon-color);
      background-color: var(--background-color);
     border-radius: 4px;
+
+    transition-duration: 255ms;
+     transition-property: background-color, fill, border-color;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
     
 }
 .client-link:hover,
@@ -656,6 +678,10 @@ display: block;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.1);
+
+    transition-duration: 255ms;
+     transition-property: background-color, fill;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
   
 }
 .follow-icon{
@@ -708,6 +734,11 @@ display: block;
     border-radius: var(--portfolio-border-radius);
     border: none;
     padding: 6px 22px;
+
+    transition-duration: 255ms;
+     transition-property: background-color, color, box-shadow;
+     transition-timing-function: cubic-bezier (0.4, 0, 0.2, 1);
+  
 }
 .button-list button:hover,
 .button-list button:focus
