@@ -111,14 +111,33 @@ li {
     display: block;
      padding-top: 32px;
      padding-bottom: 32px;
-   
 
+     position: relative;
  }
+
+
  .nav-link:hover, 
  .nav-link:focus  {
      color: var(--accent-text-color);
      cursor: pointer;
  }
+
+ .nav-link:hover::after,
+ .nav-link:focus::after,
+ .nav-link:active::after
+ {
+     content: "";
+     width: 100%;
+     height: 4px;
+     display: inline-flex;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     border-radius: 2px;
+     background: var(--background-button-hover);
+
+ }
+
 
  .contakt {
     display: flex;
@@ -135,9 +154,9 @@ li {
     line-height: 1.1;
     letter-spacing: 0.02em;
      color:var(--page-text-color);
-     display: flex;
+     display: inline-flex;
      padding: 32px 0;
-     align-items: center;
+    
  
  }
 
@@ -330,9 +349,9 @@ li {
     letter-spacing: 0.03em;
     color: var(--page-text-color);
 }
-.features {
- 
-}
+
+/*Початок секії Чем мы занимаесмя*/
+
 .features-title{
     font-weight: bold;
     font-size: 36px;
@@ -353,6 +372,9 @@ li {
 .features-item:not(:first-child) {
       margin-left: 30px;
 }
+.features-item{
+    position: relative;
+}
 
 
  .features-picture {
@@ -360,6 +382,29 @@ li {
      max-width: 100%;
      height: auto;
  }
+
+ .features-thumb{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     background:  rgba(47, 48, 58, 0.8);
+     width: 100%;
+ }
+
+.features-thumb p{
+font-weight: bold;
+font-size: 14px;
+line-height: 1.1;
+text-align: center;
+justify-content: center;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: var(--title-text-color);
+padding: 27px 82px;
+}
+
+
+/*Кінець  секії Чем мы занимаесмя*/
 
 /*Секція наша команда*/
 
@@ -624,7 +669,7 @@ display: block;
 /*Кінець футера*/
 
 
-/*Portfolio*/
+/*Початок Портфоліо*/
 
 .portfolio h1{
      position: absolute;
@@ -727,10 +772,54 @@ display: block;
  .portfolio-picture {
       display: block;
      max-width: 100%;
-     height: auto;
-    
-     
+     height: auto;    
  }
+
+
+
+.portfolio-thumb{
+    position: relative;
+
+}
+.portfolio-thumb::before{
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    opacity: 0;
+
+    transition: 500ms opacity linear;
+    
+ }
+
+ .portfolio-link:hover .portfolio-thumb::before{
+    opacity: 1;
+}
+
+ .article-content{
+    position: absolute;
+    width: 332px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    color: var(--title-text-color);
+
+    opacity: 0;
+
+    transition: 500ms opacity linear;
+}
+
+.portfolio-link:hover .article-content{
+    opacity: 1;
+}
+
+
  .portfolio-details{
     display: block;
     width: 370px;
@@ -739,7 +828,7 @@ display: block;
     border-left: 1px solid #EEEEEE;;
     border-right: 1px solid #EEEEEE;;
  }
-.portfolio-item h2{
+.portfolio-details h2{
     font-weight: bold;
     font-size: 18px;
     line-height: 2;
@@ -748,13 +837,19 @@ display: block;
     margin-bottom: 4px;
     margin-left: 24px;
 }
-.portfolio-item p{
-font-size: 16px;
-line-height: 1.8;
-letter-spacing: 0.03em;
-color: var(--page-text-color);
-margin-left: 24px;
+.portfolio-details p{
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
+    color: var(--page-text-color);
+    margin-left: 24px;
 }
+
+
+
+/*Кінець портфоліо*/ 
+
+
 
 /*.card:hover
 {
