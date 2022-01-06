@@ -250,7 +250,7 @@ li {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
 
-    transition:  4s cubic-bezier(0.4, 0, 0.2, 1) opacity ;
+    transition:  1s cubic-bezier(0.4, 0, 0.2, 1) opacity ;
 
     
 }
@@ -271,7 +271,7 @@ li {
     background-color: var(--background-color);
     border-radius: 4px;
 
-    transition:  4s cubic-bezier(0.4, 0, 0.2, 1) ;
+    transition:  1s cubic-bezier(0.4, 0, 0.2, 1) ;
 
 
 }
